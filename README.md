@@ -16,6 +16,20 @@
 
 ---
 
+## 📸 Demo
+
+<div align="center">
+
+### Main Interface
+![Kanban Board Interface](screenshots/kanban-board-demo.png)
+
+### Task Editing
+![Edit Mode](screenshots/edit-mode-demo.png)
+
+</div>
+
+---
+
 ## 🎯 Overview
 
 This Kanban board application demonstrates modern web development best practices with **zero dependencies**. Built entirely with vanilla JavaScript, it showcases state-first architecture, making it perfect for learning or as a foundation for larger projects.
