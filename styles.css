@@ -7,25 +7,25 @@
     --color-bg-primary: #0f172a;
     --color-bg-secondary: #1e293b;
     --color-bg-tertiary: #334155;
-    
+
     --color-accent-blue: #6366f1;
     --color-accent-purple: #8b5cf6;
     --color-accent-cyan: #06b6d4;
     --color-accent-pink: #ec4899;
-    
+
     --color-text-primary: #f1f5f9;
     --color-text-secondary: #cbd5e1;
     --color-text-muted: #94a3b8;
-    
+
     --color-border: rgba(148, 163, 184, 0.2);
     --color-success: #10b981;
     --color-danger: #ef4444;
-    
+
     /* Glassmorphism */
     --glass-bg: rgba(30, 41, 59, 0.7);
     --glass-border: rgba(148, 163, 184, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 0.75rem;
@@ -33,22 +33,58 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
-    
+
     /* Border Radius */
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
-    
+
     /* Transitions */
     --transition-fast: 150ms ease-in-out;
     --transition-normal: 250ms ease-in-out;
     --transition-slow: 350ms ease-in-out;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* ====================================
+   THEME VARIATIONS
+   ==================================== */
+
+/* Sunset Orange Theme */
+[data-theme="sunset"] {
+    --color-accent-blue: #f97316;
+    --color-accent-purple: #ea580c;
+    --color-accent-cyan: #fb923c;
+    --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+/* Forest Green Theme */
+[data-theme="forest"] {
+    --color-accent-blue: #10b981;
+    --color-accent-purple: #059669;
+    --color-accent-cyan: #34d399;
+    --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Midnight Purple Theme */
+[data-theme="midnight"] {
+    --color-accent-blue: #a855f7;
+    --color-accent-purple: #9333ea;
+    --color-accent-cyan: #c084fc;
+    --shadow-glow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Rose Pink Theme */
+[data-theme="rose"] {
+    --color-accent-blue: #ec4899;
+    --color-accent-purple: #db2777;
+    --color-accent-cyan: #f472b6;
+    --shadow-glow: 0 0 20px rgba(236, 72, 153, 0.3);
 }
 
 /* ====================================
@@ -79,7 +115,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -113,6 +149,15 @@ body::before {
     border-radius: var(--radius-lg);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-md);
+    min-width: 600px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xs);
 }
 
 .app-title {
@@ -122,11 +167,10 @@ body::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: var(--spacing-xs);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: var(--spacing-md);
+    transition: all var(--transition-normal);
 }
 
 .title-icon {
@@ -138,6 +182,43 @@ body::before {
     color: var(--color-text-secondary);
     font-size: 1rem;
     font-weight: 400;
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.theme-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.theme-dropdown {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    min-width: 180px;
+}
+
+.theme-dropdown:hover {
+    border-color: var(--color-accent-blue);
+    background: rgba(15, 23, 42, 1);
+}
+
+.theme-dropdown:focus {
+    outline: none;
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 /* ====================================
@@ -487,6 +568,7 @@ body::before {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -549,7 +631,7 @@ body::before {
     .kanban-board {
         grid-template-columns: 1fr;
     }
-    
+
     .tasks-container {
         min-height: 200px;
     }
@@ -559,22 +641,44 @@ body::before {
     .app-container {
         padding: var(--spacing-md);
     }
-    
+
     .app-title {
         font-size: 2rem;
     }
-    
+
     .task-form {
         flex-direction: column;
     }
-    
+
     .btn-add-task {
         width: 100%;
         justify-content: center;
     }
-    
+
     .header-content {
         padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .header-content {
+        min-width: auto;
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: stretch;
+    }
+
+    .theme-selector {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .theme-dropdown {
+        flex: 1;
+        min-width: auto;
     }
 }
 

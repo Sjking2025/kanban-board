@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modern Kanban board with drag & drop task management. Organize your workflow with To Do, In Progress, and Done columns.">
+    <meta name="description"
+        content="Modern Kanban board with drag & drop task management. Organize your workflow with To Do, In Progress, and Done columns.">
     <meta name="keywords" content="kanban, task management, productivity, drag and drop, project management">
     <title>Kanban Board - Task Management</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Main Container -->
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
             <div class="header-content">
-                <h1 class="app-title">
-                    <span class="title-icon">📋</span>
-                    Kanban Board
-                </h1>
+                <div class="header-top">
+                    <h1 class="app-title">
+                        <span class="title-icon">📋</span>
+                        Kanban Board
+                    </h1>
+                    <div class="theme-selector">
+                        <label for="themeSelect" class="theme-label">🎨 Theme:</label>
+                        <select id="themeSelect" class="theme-dropdown">
+                            <option value="default">Ocean Blue (Default)</option>
+                            <option value="sunset">Sunset Orange</option>
+                            <option value="forest">Forest Green</option>
+                            <option value="midnight">Midnight Purple</option>
+                            <option value="rose">Rose Pink</option>
+                        </select>
+                    </div>
+                </div>
                 <p class="app-subtitle">Organize your workflow with drag & drop simplicity</p>
             </div>
         </header>
@@ -32,22 +47,10 @@
         <section class="task-input-section">
             <form id="taskForm" class="task-form">
                 <div class="form-group">
-                    <input 
-                        type="text" 
-                        id="taskTitle" 
-                        class="task-input" 
-                        placeholder="Task title *" 
-                        maxlength="100"
-                        required
-                        autocomplete="off"
-                    >
-                    <textarea 
-                        id="taskDescription" 
-                        class="task-textarea" 
-                        placeholder="Description (optional)" 
-                        rows="2"
-                        maxlength="500"
-                    ></textarea>
+                    <input type="text" id="taskTitle" class="task-input" placeholder="Task title *" maxlength="100"
+                        required autocomplete="off">
+                    <textarea id="taskDescription" class="task-textarea" placeholder="Description (optional)" rows="2"
+                        maxlength="500"></textarea>
                 </div>
                 <button type="submit" class="btn-add-task">
                     <span class="btn-icon">+</span>
@@ -125,4 +128,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
