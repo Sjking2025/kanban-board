@@ -66,6 +66,15 @@ This Kanban board application demonstrates modern web development best practices
   - State restoration on page reload
   - Zero data loss on browser refresh
 
+- **🎨 Theme Customization**
+  - 5 beautiful color schemes to choose from
+  - Ocean Blue (Default) - Original premium dark theme
+  - Sunset Orange - Warm orange gradients
+  - Forest Green - Fresh green tones
+  - Midnight Purple - Deep purple accents
+  - Rose Pink - Vibrant pink highlights
+  - Theme preference saved to localStorage
+
 ### User Experience
 
 - **⌨️ Keyboard Shortcuts** - Enter to save, Escape to cancel
@@ -82,9 +91,23 @@ This Kanban board application demonstrates modern web development best practices
 
 - **Dark Mode** - Modern dark theme as default
 - **Glassmorphism** - Frosted glass effect on cards and containers
-- **Vibrant Colors** - Blues, purples, and cyans for accents
+- **Vibrant Colors** - 5 customizable color themes to choose from
 - **Smooth Animations** - Micro-interactions on every action
 - **Google Fonts** - Inter font family for clean typography
+
+### Color Themes
+
+Choose from **5 beautiful pre-built themes**:
+
+| Theme | Primary Color | Description |
+|-------|--------------|-------------|
+| 🌊 Ocean Blue (Default) | `#6366f1` | Original premium blue-purple gradient |
+| 🌅 Sunset Orange | `#f97316` | Warm orange tones |
+| 🌲 Forest Green | `#10b981` | Fresh green palette |
+| 🌙 Midnight Purple | `#a855f7` | Deep purple accents |
+| 🌸 Rose Pink | `#ec4899` | Vibrant pink highlights |
+
+All themes maintain the same premium dark mode aesthetic with different accent colors.
 
 ### Responsive Layout
 
@@ -154,6 +177,18 @@ kanban-board/
 2. **Click** the delete icon (🗑️)
 3. **Confirm** deletion in the modal
 4. Task is permanently removed
+
+### Changing Themes
+
+1. **Click** the theme dropdown in the header (🎨 Theme)
+2. **Select** your preferred color scheme:
+   - Ocean Blue (Default)
+   - Sunset Orange
+   - Forest Green
+   - Midnight Purple
+   - Rose Pink
+3. Theme changes instantly and saves automatically
+4. Your choice persists across browser sessions
 
 ---
 
