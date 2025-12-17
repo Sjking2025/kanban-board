@@ -20,8 +20,20 @@
 
 <div align="center">
 
-### Main Interface
+### Main Interface (Ocean Blue Default Theme)
 ![Kanban Board Interface](screenshots/kanban-board-demo.png)
+
+### Color Themes
+
+Switch between 5 beautiful color schemes! Your preference is saved automatically.
+
+| 🌅 Sunset Orange | 🌲 Forest Green |
+|:----------------:|:---------------:|
+| ![Sunset Theme](screenshots/theme-sunset.png) | ![Forest Theme](screenshots/theme-forest.png) |
+
+| 🌙 Midnight Purple | 🌸 Rose Pink |
+|:------------------:|:------------:|
+| ![Midnight Theme](screenshots/theme-midnight.png) | ![Rose Theme](screenshots/theme-rose.png) |
 
 ### Task Editing
 ![Edit Mode](screenshots/edit-mode-demo.png)
