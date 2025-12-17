@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Kanban board with drag & drop task management. Organize your workflow with To Do, In Progress, and Done columns.">
+    <meta name="keywords" content="kanban, task management, productivity, drag and drop, project management">
+    <title>Kanban Board - Task Management</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="title-icon">📋</span>
+                    Kanban Board
+                </h1>
+                <p class="app-subtitle">Organize your workflow with drag & drop simplicity</p>
+            </div>
+        </header>
+
+        <!-- Task Input Form -->
+        <section class="task-input-section">
+            <form id="taskForm" class="task-form">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="taskTitle" 
+                        class="task-input" 
+                        placeholder="Task title *" 
+                        maxlength="100"
+                        required
+                        autocomplete="off"
+                    >
+                    <textarea 
+                        id="taskDescription" 
+                        class="task-textarea" 
+                        placeholder="Description (optional)" 
+                        rows="2"
+                        maxlength="500"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn-add-task">
+                    <span class="btn-icon">+</span>
+                    Add Task
+                </button>
+            </form>
+        </section>
+
+        <!-- Kanban Board -->
+        <main class="kanban-board">
+            <!-- To Do Column -->
+            <div class="board-column" data-status="todo">
+                <div class="column-header">
+                    <span class="column-icon">📝</span>
+                    <h2 class="column-title">To Do</h2>
+                    <span class="task-count" data-column="todo">0</span>
+                </div>
+                <div class="tasks-container" id="todoContainer" data-status="todo">
+                    <!-- Empty state -->
+                    <div class="empty-state">
+                        <span class="empty-icon">✨</span>
+                        <p class="empty-text">No tasks yet</p>
+                        <p class="empty-hint">Add a task above to get started</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="board-column" data-status="inprogress">
+                <div class="column-header">
+                    <span class="column-icon">⚡</span>
+                    <h2 class="column-title">In Progress</h2>
+                    <span class="task-count" data-column="inprogress">0</span>
+                </div>
+                <div class="tasks-container" id="inprogressContainer" data-status="inprogress">
+                    <!-- Empty state -->
+                    <div class="empty-state">
+                        <span class="empty-icon">🚀</span>
+                        <p class="empty-text">Nothing in progress</p>
+                        <p class="empty-hint">Drag tasks here to start working</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Done Column -->
+            <div class="board-column" data-status="done">
+                <div class="column-header">
+                    <span class="column-icon">✅</span>
+                    <h2 class="column-title">Done</h2>
+                    <span class="task-count" data-column="done">0</span>
+                </div>
+                <div class="tasks-container" id="doneContainer" data-status="done">
+                    <!-- Empty state -->
+                    <div class="empty-state">
+                        <span class="empty-icon">🎉</span>
+                        <p class="empty-text">No completed tasks</p>
+                        <p class="empty-hint">Move finished tasks here</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Delete Confirmation Modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <h3 class="modal-title">Delete Task?</h3>
+                <p class="modal-message">This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button id="cancelDelete" class="btn-secondary">Cancel</button>
+                    <button id="confirmDelete" class="btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
